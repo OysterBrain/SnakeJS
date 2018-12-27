@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Snake game</title>
+    <style>
+        canvas {
+            background: #216458;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+            border-left: 2px solid black;
+        }
+
+        #gameCenter {
+            width: 500px;
+            height: 150px;
+            background: #216458;
+            border: solid black 2px ;
+            color: white;
+            text-align: center;
+            font: normal bold 18px serif;
+        }
+
+        .centre {
+            position:absolute;
+            margin-left: 30%;
+            margin-top: 5%;
+        }
+
+        h1 {
+            display: inline-block;
+        }
+        button {
+            display: inline-block;
+            background: black;
+            font: normal bold 18px serif;
+            color: white;
+            margin-left: 24px;
+        }
+
+        #Pname {
+            margin-top:0px;
+        }
+
+    </style>
+
+    <script src="snake.js"></script>
+</head>
+
+<body onload="init();" class="centre">
+
+    <div id="gameCenter">
+        <h1>SNAKE GAME</h1>
+        <button onclick="reload();">RESTART</button>
+
+        <p id="Pname">Player name: </p>
+
+        <div id="Rightscore">
+
+            <p id="score">Score : 0</p>
+
+        </div>
+    </div>
+
+
+
+    <canvas id="myCanvas" width="500" height="500">
+
+    </canvas>
+
+</body>
+</html>
