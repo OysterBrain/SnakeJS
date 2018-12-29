@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JavaScript Snake game</title>
+    <title>Snake game</title>
     <style>
         canvas {
             background: #216458;
@@ -12,7 +12,7 @@
 
         #gameCenter {
             width: 500px;
-            height: 150px;
+            height: 200px;
             background: #216458;
             border: solid black 2px ;
             color: white;
@@ -59,12 +59,18 @@
             <p id="score">Score : 0</p>
 
         </div>
+
+        <form >
+            <input type="radio" id="easy" checked> easy
+            <input type="radio" id="hard" > hard
+            <input type="radio" id="xtrem" > extrem
+        </form>
+        
     </div>
 
 
 
     <canvas id="myCanvas" width="500" height="500">
-
     </canvas>
 
 </body>

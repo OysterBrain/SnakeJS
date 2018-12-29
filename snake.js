@@ -14,19 +14,25 @@ var dots;
 var apple_x;
 var apple_y;
 
+//directions
 var leftDirection = false;
 var rightDirection = true;
 var upDirection = false;
 var downDirection = false;
+
+//toujours en jeu?
 var inGame = true;
 
 const DOT_SIZE = 10;
 const ALL_DOTS = 900;
-//
+
 const MAX_RAND = 40;
 
-//vitesse du serpent
-const DELAY = 150;
+//vitesses du serpent
+const EASY = 150;
+const HARD = 150;
+const XTREM = 150;
+
 
 const C_HEIGHT = 500;
 const C_WIDTH = 500;
@@ -44,13 +50,18 @@ function init() {
     canvas = document.getElementById('myCanvas');
     ctx = canvas.getContext('2d');
     Pname = document.getElementById('Pname');
-    var person = prompt("Enter your player name", "PlayerName");
+    var person = null;
+
+    //le nom du joueur ne peut être null
+    while (person == null) {
+        var person = prompt("Enter your player name", "PlayerName");
+    }
 
     Pname.innerHTML = "Player name: " + person ;
     loadImages();
     createSnake();
     locateApple();
-    setTimeout("gameCycle()", DELAY);
+    setTimeout("gameCycle()", EASY);
 }
 
 
@@ -214,13 +225,32 @@ function locateApple() {
 //fonction qui simule le cycle de vie du jeu
 function gameCycle() {
 
+    easy = document.getElementById("easy").value;
+    hard = document.getElementById("hard").value;
+    xtrem = document.getElementById("xtrem").value;
+
     if (inGame) {
 
         checkApple();
         checkCollision();
         move();
         doDrawing();
-        setTimeout("gameCycle()", DELAY);
+
+       /* if(easy != null) {
+
+            setTimeout("gameCycle()", EASY);
+        }
+        if(hard != null) {
+
+            setTimeout("gameCycle()", HARD);
+
+        }
+        if(xtrem != null ) {
+*/
+            setTimeout("gameCycle()", XTREM);
+
+      //  }
+
     }
 }
 
